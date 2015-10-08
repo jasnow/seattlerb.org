@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.boolean :published
       t.references :member
 
-      t.timestamps
+      t.timestamps null: false
     end
     add_index :posts, :member_id
   end

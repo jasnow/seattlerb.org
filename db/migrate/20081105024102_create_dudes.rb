@@ -3,7 +3,7 @@ class CreateDudes < ActiveRecord::Migration
     create_table :dudes do |t|
       t.string :name, :email, :bio, :website
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 

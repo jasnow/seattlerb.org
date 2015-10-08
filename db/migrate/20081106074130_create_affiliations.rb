@@ -3,7 +3,7 @@ class CreateAffiliations < ActiveRecord::Migration
     create_table :affiliations do |t|
       t.belongs_to :dude, :project
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 
