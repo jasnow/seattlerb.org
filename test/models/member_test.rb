@@ -54,7 +54,7 @@ class MemberTest < ActiveSupport::TestCase
                         :email => "pete@gmail.com",
                         :password => "password1234",
                         :github => "not_a_user234890")
-#FIXME:    refute member.valid?
+    refute member.valid?
   end
 
   def test_valid_rubygems
