@@ -13,11 +13,16 @@ class Member < ActiveRecord::Base
 
   validates_presence_of :name
 
-  validates :email,        :email => true,    :allow_blank => true, uniqueness: true
-  validates :twitter,      :twitter => true,  :allow_blank => true, uniqueness: true
-  validates :github,       :github => true,   :allow_blank => true, uniqueness: true
-  validates :ruby_gems_id, :rubygems => true, :allow_blank => true, uniqueness: true
-  validates :website,      :url => true,      :allow_blank => true, uniqueness: true
+  validates :email,        :email => true,
+    :allow_blank => true, uniqueness: true
+  validates :twitter,      :twitter => true,
+    :allow_blank => true, uniqueness: true
+  validates :github,       :github => true,
+    :allow_blank => true, uniqueness: true
+  validates :ruby_gems_id, :rubygems => true,
+    :allow_blank => true, uniqueness: true
+  validates :website,      :url => true,
+    :allow_blank => true, uniqueness: true
 
   scope :featured, lambda { where(featured: true) }
   scope :regular, lambda { where(featured: false) }
@@ -49,7 +54,8 @@ class Member < ActiveRecord::Base
   end
 
   def get_twitter_image_url
-    return twitter_client.user(self.twitter).profile_image_uri_https(:bigger).to_s
+    return twitter_client.user(self.twitter).profile_image_uri_https(
+      :bigger).to_s
   rescue Twitter::Error::NotFound
     return NONE
   end

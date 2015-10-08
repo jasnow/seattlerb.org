@@ -7,6 +7,7 @@ class NewsletterController < ApplicationController
   private
 
   def subscribe_params
-    params.require(:subscribe).permit({:person => :email}, :subscribe_to_discussion, :subscribe_to_jobs)
+    params.require(:subscribe).permit({:person => :email},
+      :subscribe_to_discussion, :subscribe_to_jobs)
   end
 end

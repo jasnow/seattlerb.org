@@ -6,7 +6,8 @@ module ApplicationHelper
   end
 
   def rubygems_link person
-    icon_link("icon-heart", "Ruby Gems", person.ruby_gems_id, "http://rubygems.org/profiles/")
+    icon_link("icon-heart", "Ruby Gems", person.ruby_gems_id,
+      "http://rubygems.org/profiles/")
   end
 
   def github_link person
@@ -27,7 +28,8 @@ module ApplicationHelper
   end
 
   def nav_item_link link_label, link_path, method=nil
-    content_tag :li, link_to(link_label, link_path, method), :class => ('active' if current_page?(link_path))
+    content_tag :li, link_to(link_label, link_path, method), :class => (
+      'active' if current_page?(link_path))
   end
 
   def title_or_action

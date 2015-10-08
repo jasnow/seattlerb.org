@@ -9,13 +9,15 @@ class TalksController < ApplicationController
 
   def create
     #spam catch to redirect - maybe the bots were ignoring the spam field
-    redirect_to talks_url and return if talk_params[:special_talk_requests].present?
+    redirect_to talks_url and return if talk_params[
+      :special_talk_requests].present?
 
     @talk = Talk.new talk_params
 
     if @talk.save
       admins = Admin.where(talk_notification: true).map(&:email)
-      AdminMailer.admin_notification(admins,@talk).deliver_later unless admins.empty?
+      AdminMailer.admin_notification(admins,@talk).deliver_later unless
+        admins.empty?
       redirect_to talks_url, notice: 'Talk was successfully created.'
     else
       talks
@@ -54,6 +56,7 @@ class TalksController < ApplicationController
   end
 
   def talk_params
-    params.require(:talk).permit(:title, :description, :presenter, :kind, :email, :spam, :special_talk_requests)
+    params.require(:talk).permit(:title, :description, :presenter,
+                                 :kind, :email, :spam, :special_talk_requests)
   end
 end
