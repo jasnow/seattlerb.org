@@ -1,29 +1,29 @@
 # -*- ruby -*-
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-ruby "2.0.0"
+gem 'rails', '4.2.4'
 
-gem "rake",                      "~> 10.4.2"
-gem "rails",                     "~> 4.2.1"
-gem "jquery-rails",              "~> 4.0.3"
-gem "httparty",                  "~> 0.13.3"
-gem "rails_admin",               "~> 0.6.7"
-gem "devise",                    "~> 3.4.1"
-gem "unicorn",                   "~> 4.8.3"
-gem "twitter",                   "~> 5.14.0"
+ruby '2.2.3'
 
-group :production do
-  gem "pg",                      "~> 0.18.1"
-end
-
-gem "uglifier",                  "~> 2.7.1"
+gem 'rake'
+gem 'jquery-rails'
+gem 'httparty'
+gem 'rails_admin'
+gem 'devise'
+gem 'unicorn'
+gem 'twitter'
+gem 'uglifier'
 
 group :development, :test do
-  gem "sqlite3",                 "~> 1.3.0"
-  gem "minitest-rails",          "~> 2.1.1"
-  gem "ZenTest",                 "~> 4.9"
-  gem "autotest-rails",          "~> 4.2.1"
-  gem "letter_opener"
-  gem "pry"
+  gem 'sqlite3'
+  gem 'minitest-rails'
+  gem 'ZenTest'
+  gem 'autotest-rails'
+  gem 'letter_opener'
+  gem 'pry'
+end
+
+group :production do
+  gem 'pg'
 end

@@ -5,3 +5,5 @@ db/*.sqlite3
 db/schema.rb
 db/data.yml
 config/memcache.conf
+# Added to not force others to use overcommit gem.
+.overcommit.yml
